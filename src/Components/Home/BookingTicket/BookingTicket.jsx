@@ -11,6 +11,7 @@ const BookingTicket = () => {
    
     const handleSubmit = event => {
         event.preventDefault();
+        const myname=event.target.myname.value;
         const name=event.target.name.value;
         const status=event.target.status.value;
         const language=event.target.language.value;
@@ -18,7 +19,7 @@ const BookingTicket = () => {
     
     
         // Store user details in local storage
-        storeData('useDetails',{name,email,status,language})
+        storeData('useDetails',{myname,name,email,status,language})
         // localStorage.setItem('userDetails', JSON.stringify({ name, email }));
     
         // Redirect to show details page
@@ -32,7 +33,8 @@ const BookingTicket = () => {
     <div className="container contact__container">
 
       <form form onSubmit={handleSubmit} >
-        <input type="text" name="name" defaultValue={data.name} placeholder="" required />
+        <input type="text" name="myname"  placeholder="Your Name" required />
+        <input type="text" name="name" defaultValue={`Movie Name:${data.name}`} placeholder="" required />
         <input type="text" name="status" id="" defaultValue={`Status:${data.status}`} required />
         <input type="text" name="language" id="" defaultValue={`Language:${data.language}`} required />
         <input type="email" name="email" id="" placeholder="Your Email" required />
