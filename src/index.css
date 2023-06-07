@@ -134,9 +134,16 @@ display: flex;
 }
 .img-styles{
   border-radius: 15px;
+  width: 270px;
     
 }
-
+.rating{
+    display: flex;
+    align-items: center;
+}
+.rating-style{
+    color: yellow;
+}
 
 
 /* =============MEDIA QUERIES(MEDIUM DEVICES)============= */
@@ -161,5 +168,6 @@ display: flex;
     }
     section>h2{
         margin-bottom: 2rem;
+        text-align: center;
     }
 }

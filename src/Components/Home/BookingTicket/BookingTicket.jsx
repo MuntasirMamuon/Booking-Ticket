@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import './BookingTicket.css'
 import storeData from '../../../Helper/Storage';
 const BookingTicket = () => {
@@ -12,11 +12,13 @@ const BookingTicket = () => {
     const handleSubmit = event => {
         event.preventDefault();
         const name=event.target.name.value;
+        const status=event.target.status.value;
+        const language=event.target.language.value;
         const email=event.target.email.value;
     
     
         // Store user details in local storage
-        storeData('useDetails',{name,email})
+        storeData('useDetails',{name,email,status,language})
         // localStorage.setItem('userDetails', JSON.stringify({ name, email }));
     
         // Redirect to show details page
@@ -31,9 +33,14 @@ const BookingTicket = () => {
 
       <form form onSubmit={handleSubmit} >
         <input type="text" name="name" defaultValue={data.name} placeholder="" required />
+        <input type="text" name="status" id="" defaultValue={`Status:${data.status}`} required />
+        <input type="text" name="language" id="" defaultValue={`Language:${data.language}`} required />
         <input type="email" name="email" id="" placeholder="Your Email" required />
         {/* <textarea name="message" id=""  rows="7" placeholder="Your Message" required></textarea> */}
+      <div className='booking-btn'>
+      
         <button className="btn btn-primary" type="submit">Book Ticket</button>
+      </div>
       </form>
  
     </div>

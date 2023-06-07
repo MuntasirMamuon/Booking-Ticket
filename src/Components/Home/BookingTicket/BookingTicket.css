@@ -81,6 +81,11 @@
         resize: none;
         color: var(--color-white);
     }
+    .booking-btn{
+      display: flex;
+      gap: 10px;
+      font-weight: bold;
+    }
     
     /* =============MEDIA QUERIES(MEDIUM DEVICES)============= */
     
